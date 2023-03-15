@@ -20,15 +20,15 @@
   <button type="button" class="btn btn-primary" onclick="recordTime()">React</button>
   
   <script> 
-  var reactTime = undefined
+  let reactTime = undefined
   function recordTime() {
     reactTime=Date.now()
   }
 
   function startTime(){
-    for(i=0; i<9;i++){
+    for(let i=0; i<9; i++){
         setTimeout(function(){
-            document.getElementById("counter").innerHTML = "Count " + i;
+            document.getElementById("counter").innerHTML = "Count " + i
         }, (8-i)*1000)
     }
     setTimeout(function(){
