@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> <head>
+    <title>Add and Remove Items</title>
+     <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+    <h2>Sri Charan Vattikonda builds a delaying queue</h2>
+    <label for="input">Enter the name of item here: </label>
+    <input type="text" id="input">
+    <button onclick="makeNewDiv()">Add value</button>
+		<div class="flex-container" id="target">
+		  <div class="delayQ">row item 1</div>   
+		  <div class="delayQ">row item 2</div>  
+		  <div class="delayQ">row item 3</div>  
+		</div>
+	
+	
+</body>
+<script>
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div")
+        let newElement = document.getElementById("input").value
+		element.innerHTML = newElement
+		element.className = "delayQ"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)
+		
+	}
+</script>
+</html>	
