@@ -21,15 +21,20 @@
   
   <script> 
   let reactTime = undefined
+  function randCount(){
+    let randNum = Math.floor(Math.random()*9 ) + 2;
+    return randNum
+  }
   function recordTime() {
     reactTime=Date.now()
   }
 
   function startTime(){
-    for(let i=0; i<9; i++){
+    let start=randCount()
+    for(let i=0; i < start; i++){
         setTimeout(function(){
             document.getElementById("counter").innerHTML = "Count " + i
-        }, (8-i)*1000)
+        }, (start-i)*1000)
     }
     setTimeout(function(){
     if (reactTime==undefined){
